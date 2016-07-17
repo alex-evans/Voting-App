@@ -1,11 +1,11 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './app/routes/index'
+    './app/index.js'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -22,14 +22,14 @@ module.exports = {
     {
       test: /\.js$/,
       loaders: ['babel'],
-      include: path.join(__dirname, 'client')
+      include: path.join(__dirname, 'app')
     },
     // CSS
     {
       test: /\.styl$/,
-      include: path.join(__dirname, 'client'),
+      include: path.join(__dirname, 'app'),
       loader: 'style-loader!css-loader!stylus-loader'
     }
     ]
   }
-};
+}
