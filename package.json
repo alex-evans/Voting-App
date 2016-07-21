@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "As part of the Free Code Camp challenges this is the Voting App",
   "scripts": {
-    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.js",
     "build": "npm run clean && npm run build:webpack",
-    "test": "NODE_ENV=production mocha './tests/**/*.spec.js' --compilers js:babel-core/register",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
+    "test:watch": "npm run test -- --watch",
     "clean": "rimraf dist",
     "start": "node server.js",
     "tunnel": "browser-sync start --proxy localhost:7770 --tunnel alex-evans"
@@ -52,10 +53,9 @@
     "webpack-hot-middleware": "^2.12.1"
   },
   "devDependencies": {
-    "expect": "^1.18.0",
-    "expect-jsx": "^2.5.1",
+    "chai": "^3.5.0",
     "jsdom": "^9.4.1",
-    "mocha": "^2.4.5",
+    "mocha": "^2.5.3",
     "react-addons-test-utils": "^15.2.1"
   }
 }
