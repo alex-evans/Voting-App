@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "description": "As part of the Free Code Camp challenges this is the Voting App",
   "scripts": {
-    "build:webpack": "NODE_ENV=production webpack --config webpack.config.js",
-    "build": "npm run clean && npm run build:webpack",
+    "build:webpack": "webpack --config webpack.config.js",
+    "build": "NODE_ENV=development npm run build:webpack",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch",
-    "clean": "rimraf dist",
-    "start": "node server.js",
-    "tunnel": "browser-sync start --proxy localhost:7770 --tunnel alex-evans"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -44,7 +42,6 @@
     "react-transform-hmr": "^1.0.4",
     "redbox-react": "^1.2.10",
     "redux": "^3.5.2",
-    "rimraf": "^2.5.3",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.1",
