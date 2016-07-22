@@ -1,34 +1,39 @@
 var path = require('path')
 var webpack = require('webpack')
 
+// env
+const buildDirectory = './dist/'
+
 module.exports = {
-  devtool: 'source-map',
-  entry: [
-    'webpack-hot-middleware/client',
-    './app/index.js'
-  ],
+  entry: './app/index.js',
+  devServer: {
+    hot: true,
+    inline: true,
+    port: 7770,
+    historyApiFallback: true,
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  }
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    path: path.resolve(buildDirectory),
+    filename: 'app.js',
+    publicPath: 'http://localhost:7770/dist',
   },
   externals: {
     'cheerio': 'window',
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true,
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ],
   module: {
-    loaders: [
-    // js
-    {
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'app')
-    },
-    ]
-  }
-}
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel',
+      query: {
+        presets: ['react', 'es2015', 'stage-0'],
+      },
+    }],
+  },
+  plugins: [],
+};
