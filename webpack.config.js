@@ -1,39 +1,41 @@
 var path = require('path')
 var webpack = require('webpack')
-
-// env
-const buildDirectory = './dist/'
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: './app/index.js',
-  devServer: {
-    hot: true,
-    inline: true,
-    port: 7770,
-    historyApiFallback: true,
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-  }
+  devtool: 'source-map',
+  entry: [
+    'webpack-hot-middleware/client',
+    './app/index.js'
+  ],
   output: {
-    path: path.resolve(buildDirectory),
-    filename: 'app.js',
-    publicPath: 'http://localhost:7770/dist',
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
   },
   externals: {
     'cheerio': 'window',
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true,
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /(node_modules|bower_components)/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-0'],
-      },
-    }],
-  },
-  plugins: [],
-};
+    loaders: [
+    // js
+    {
+      test: /\.js$/,
+      loaders: ['babel'],
+      include: path.join(__dirname, 'app')
+    },
+    // css
+    {
+      test: /\.scss$/,
+      loaders: ["style", "css", "sass"],
+      include: path.join(__dirname, 'public/css/')
+    }
+    ]
+  }
+}

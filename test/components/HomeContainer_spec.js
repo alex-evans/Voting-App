@@ -6,7 +6,9 @@ import Header from '../../app/components/Header'
 
 describe('HomeContainer', () => {
   it('contains a Header component', function () {
-    const wrapper = mount(<Header/>)
-    expect(wrapper.find(Header)).to.have.length(1)
+    const wrapper = shallow(<HomeContainer />)
+    expect(wrapper.containsAllMatchingElements([
+      <Header/>
+    ])).to.equal(true)
   })
 })
