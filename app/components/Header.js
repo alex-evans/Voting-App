@@ -6,15 +6,20 @@ import css from '../../public/css/main.scss'
 
 class Header extends React.Component {
   render() {
+    let pollBtn = <NewPollBtn />
     return (
       <div className='header column-12'>
-        <NewPollBtn />
-        <div className='text-center header-title'>
+        <div className='new-btn-container column-3' >
+          {this.props.auth ? <NewPollBtn /> : "."}
+        </div>
+        <div className='text-center header-title column-6'>
           <h1>
             <Link to='/'>Voting-App</Link>
           </h1>
         </div>
-        <AuthBtn {...this.props} />
+        <div className='auth-btn-container column-3'>
+          <AuthBtn {...this.props} />
+        </div>
       </div>
     )
   }

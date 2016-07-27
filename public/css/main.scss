@@ -27,29 +27,23 @@ html, body {
   background-color: $header-color;
 }
 
-.new-poll-btn button {
+.header-btns {
   position: relative;
-  top: 25px;
-  margin-left: 10px;
+  top: 22px;
   width: 80px;
   height: 40px;
   border-radius: 0px;
   opacity: 0.8;
 }
 
-.header-title {
-  position: relative;
-  bottom: 35px;
+.new-poll-btn {
+  @extend .header-btns;
+  margin-left: 10px;
 }
 
-.auth-btn button {
-  position: relative;
-  bottom: 82px;
+.auth-btn {
+  @extend .header-btns;
   margin-right: 10px;
-  width: 60px;
-  height: 40px;
-  border-radius: 0px;
-  opacity: 0.8;
 }
 
 /*-----------------------*\
