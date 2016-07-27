@@ -1,5 +1,4 @@
 function auth(state = [], action) {
-  console.log("auth reduce", action.type)
   switch(action.type) {
     case 'AUTH_USER':
       return [...state,{
@@ -10,3 +9,5 @@ function auth(state = [], action) {
   }
   return state
 }
+
+export default auth
