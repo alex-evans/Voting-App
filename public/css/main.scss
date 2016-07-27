@@ -1,4 +1,142 @@
+/*-----------------------*\
+     Styling
+\*-----------------------*/
 
-.login button {
+$font-stack: Helvetica, sans-serif;
+$font-color: #333;
+$header-color: #383838;
+$main-background-color: #2d5867;
+$third-color: #1e2e4d;
+$fourth-color: #000d11;
+$fifth-color: #2c003a;
+
+*:focus {
+  outline: none;
+}
+
+html, body {
+  font: 16px $font-stack;
+  color: $font-color;
+  background-color: $main-background-color;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  background-color: $header-color;
+}
+
+.new-poll-btn button {
+  position: relative;
+  top: 25px;
+  margin-left: 10px;
+  width: 80px;
+  height: 40px;
+  border-radius: 0px;
+  opacity: 0.8;
+}
+
+.header-title {
+  position: relative;
+  bottom: 35px;
+}
+
+.auth-btn button {
+  position: relative;
+  bottom: 82px;
   margin-right: 10px;
+  width: 60px;
+  height: 40px;
+  border-radius: 0px;
+  opacity: 0.8;
+}
+
+/*-----------------------*\
+     Grid System
+\*-----------------------*/
+
+.row,
+.column {
+  box-sizing: border-box;
+}
+
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.column {
+  position: relative;
+  float: left;
+  display: block;
+}
+
+.column + .column {
+  margin-left: 1.6%;
+}
+
+.column-1 {
+  @extend .column;
+  width: 6.86666666667%;
+}
+
+.column-2 {
+  @extend .column;
+  width: 15.3333333333%;
+}
+
+.column-3 {
+  @extend .column;
+  width: 23.8%;
+}
+
+.column-4 {
+  @extend .column;
+  width: 32.2666666667%;
+}
+
+.column-5 {
+  @extend .column;
+  width: 40.7333333333%;
+}
+
+.column-6 {
+  @extend .column;
+  width: 49.2%;
+}
+
+.column-7 {
+  @extend .column;
+  width: 57.6666666667%;
+}
+
+.column-8 {
+  @extend .column;
+  width: 66.1333333333%;
+}
+
+.column-9 {
+  @extend .column;
+  width: 74.6%;
+}
+
+.column-10 {
+  @extend .column;
+  width: 83.0666666667%;
+}
+
+.column-11 {
+  @extend .column;
+  width: 91.5333333333%;
+}
+
+.column-12 {
+  @extend .column;
+  width: 100%;
 }
