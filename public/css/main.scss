@@ -21,116 +21,34 @@ html, body {
 }
 
 .header {
+  display: -webkit-flex;
+  display: flex;
   position: fixed;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
   top: 0;
   height: 80px;
+  width: 100%;
   background-color: $header-color;
 }
 
 .header-btns {
-  position: relative;
-  top: 22px;
   width: 80px;
   height: 40px;
   border-radius: 0px;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .new-poll-btn {
   @extend .header-btns;
-  margin-left: 10px;
 }
 
 .auth-btn {
   @extend .header-btns;
-  margin-right: 10px;
 }
 
-/*-----------------------*\
-     Grid System
-\*-----------------------*/
-
-.row,
-.column {
-  box-sizing: border-box;
-}
-
-.row:before,
-.row:after {
-  content: " ";
-  display: table;
-}
-
-.row:after {
-  clear: both;
-}
-
-.column {
-  position: relative;
-  float: left;
-  display: block;
-}
-
-.column + .column {
-  margin-left: 1.6%;
-}
-
-.column-1 {
-  @extend .column;
-  width: 6.86666666667%;
-}
-
-.column-2 {
-  @extend .column;
-  width: 15.3333333333%;
-}
-
-.column-3 {
-  @extend .column;
-  width: 23.8%;
-}
-
-.column-4 {
-  @extend .column;
-  width: 32.2666666667%;
-}
-
-.column-5 {
-  @extend .column;
-  width: 40.7333333333%;
-}
-
-.column-6 {
-  @extend .column;
-  width: 49.2%;
-}
-
-.column-7 {
-  @extend .column;
-  width: 57.6666666667%;
-}
-
-.column-8 {
-  @extend .column;
-  width: 66.1333333333%;
-}
-
-.column-9 {
-  @extend .column;
-  width: 74.6%;
-}
-
-.column-10 {
-  @extend .column;
-  width: 83.0666666667%;
-}
-
-.column-11 {
-  @extend .column;
-  width: 91.5333333333%;
-}
-
-.column-12 {
-  @extend .column;
-  width: 100%;
+.container {
+  padding-top: 80px;
 }

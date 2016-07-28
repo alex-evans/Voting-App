@@ -7,6 +7,7 @@ import css from '../public/css/main.scss'
 // Import Components
 import App from './components/App'
 import HomeContainer from './components/HomeContainer'
+import CreatePollContainer from './components/CreatePollContainer'
 
 // Import react router deps
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
@@ -18,6 +19,7 @@ const router = (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={HomeContainer}></IndexRoute>
+        <Route path="/create" component={CreatePollContainer}></Route>
       </Route>
     </Router>
   </Provider>
