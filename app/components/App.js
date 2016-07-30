@@ -5,7 +5,8 @@ import Main from './Main'
 
 function mapStateToProps(state) {
   return {
-    auth: state.auth
+    auth: state.auth,
+    polls: state.polls
   }
 }
 

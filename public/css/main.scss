@@ -9,6 +9,7 @@ $main-background-color: #2d5867;
 $third-color: #1e2e4d;
 $fourth-color: #000d11;
 $fifth-color: #2c003a;
+$create-bkg-color: #e5e5e5;
 
 *:focus {
   outline: none;
@@ -34,7 +35,16 @@ html, body {
   background-color: $header-color;
 }
 
+.header-title {
+  flex: 2 1 600px;
+}
+
+.empty-new-poll {
+  flex: 1 1 100px;
+}
+
 .header-btns {
+  flex: 1 1 100px;
   width: 80px;
   height: 40px;
   border-radius: 0px;
@@ -50,5 +60,16 @@ html, body {
 }
 
 .container {
+  background-color: $main-background-color;
   padding-top: 80px;
+}
+
+.create-poll {
+  background-color: $create-bkg-color;
+  border-radius: 25px;
+  margin-top: 10px;
+}
+
+.create-poll form {
+  padding: 10px;
 }

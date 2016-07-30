@@ -5,6 +5,9 @@ import AuthBtn from './AuthBtn'
 import css from '../../public/css/main.scss'
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
       <div className='header'>

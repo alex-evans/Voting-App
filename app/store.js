@@ -6,7 +6,8 @@ import rootReducer from './reducers/index'
 
 // create an object for the default data
 const defaultState = {
-  auth: false
+  auth: false,
+  polls: []
 }
 
 const store = createStore(rootReducer, defaultState)
