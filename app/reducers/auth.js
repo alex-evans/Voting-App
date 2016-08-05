@@ -1,3 +1,5 @@
+'use strict'
+
 function auth(state = [], action) {
   switch(action.type) {
     case 'AUTH_USER':

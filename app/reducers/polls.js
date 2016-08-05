@@ -1,7 +1,9 @@
-function createPoll(state = [], action) {
+'use strict'
+
+function polls(state = [], action) {
   switch(action.type) {
     case 'CREATE_POLL':
-      return [...state,{
+      return [...state, {
         name: action.name,
         question: action.question,
         options: action.options
@@ -9,7 +11,6 @@ function createPoll(state = [], action) {
     default:
       return state
   }
-  return state
 }
 
-export default createPoll
+export default polls

@@ -1,3 +1,5 @@
+'use strict'
+
 import React from 'react'
 import css from '../../public/css/main.scss'
 import CreatePoll from './CreatePoll'

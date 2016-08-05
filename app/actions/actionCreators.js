@@ -1,3 +1,5 @@
+'use strict'
+
 // authorize user
 export function authorizeUser() {
   return {
@@ -12,5 +14,17 @@ export function createPoll(name, question, options) {
     name,
     question,
     options
+  }
+}
+
+// save new poll
+export function savePoll() {
+  return function(dispatch, getState) {
+
+  }
+
+
+  return {
+    type: 'SAVING_POLL'
   }
 }
