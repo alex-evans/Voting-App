@@ -15,7 +15,8 @@ class CreatePoll extends React.Component {
     const question = this.refs.question.value
     const options = this.refs.options.value.split(",")
     if(name && question && options) {
-      this.props.createPoll(name, question, options)
+      // this.props.createPoll(name, question, options)
+      this.props.savePoll()
       browserHistory.push('/')
     }
   }

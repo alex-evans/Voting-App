@@ -8,6 +8,9 @@ function polls(state = [], action) {
         question: action.question,
         options: action.options
       }]
+    case 'SAVE_POLL':
+      console.log("In the save poll")
+      return state
     default:
       return state
   }

@@ -17,14 +17,15 @@ export function createPoll(name, question, options) {
   }
 }
 
+function savingPoll() {
+  return {
+    type: 'SAVE_POLL'
+  }
+}
+
 // save new poll
 export function savePoll() {
-  return function(dispatch, getState) {
-
-  }
-
-
-  return {
-    type: 'SAVING_POLL'
+  return function(dispatch) {
+    dispatch(savingPoll())
   }
 }
