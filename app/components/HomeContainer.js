@@ -2,6 +2,7 @@
 
 import React from 'react'
 import css from '../../public/css/main.scss'
+import MyPollsContainer from './MyPollsContainer'
 
 class HomeContainer extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class HomeContainer extends React.Component {
     return (
       <div className='container'>
         <div>
-          I'm the Home Container
+          <MyPollsContainer {...this.props} />
         </div>
       </div>
     )

@@ -17,6 +17,17 @@ export function createPoll(name, question, options) {
   }
 }
 
+export function savePoll(name, question, options, id) {
+  return {
+    type: 'SAVE_POLL',
+    name,
+    question,
+    options,
+    id
+  }
+}
+
+/* Thunk work (come back to when wiring up back end)
 function savingPoll() {
   return {
     type: 'SAVE_POLL'
@@ -29,3 +40,4 @@ export function savePoll() {
     dispatch(savingPoll())
   }
 }
+*/

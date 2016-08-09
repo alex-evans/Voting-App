@@ -14,9 +14,11 @@ class CreatePoll extends React.Component {
     const name = this.refs.name.value
     const question = this.refs.question.value
     const options = this.refs.options.value.split(",")
+    // Remove Id reference when wiring up backend
+    const id = this.props.polls.length
     if(name && question && options) {
       // this.props.createPoll(name, question, options)
-      this.props.savePoll()
+      this.props.savePoll(name, question, options, id)
       browserHistory.push('/')
     }
   }

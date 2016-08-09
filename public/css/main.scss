@@ -73,3 +73,23 @@ html, body {
 .create-poll form {
   padding: 10px;
 }
+
+.my-polls-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+  background-color: $third-color;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 25px;
+}
+
+.poll {
+  flex-basis: 100%;
+  width: 80vw;
+  background-color: white;
+  border-radius: 25px;
+  padding: 5px;
+  margin-top: 2px;
+}

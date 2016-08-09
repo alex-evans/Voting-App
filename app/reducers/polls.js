@@ -9,8 +9,12 @@ function polls(state = [], action) {
         options: action.options
       }]
     case 'SAVE_POLL':
-      console.log("In the save poll")
-      return state
+      return [...state, {
+        id: action.id,
+        name: action.name,
+        question: action.question,
+        options: action.options
+      }]
     default:
       return state
   }
