@@ -5,7 +5,7 @@
 module.exports = function PollsHandler() {
 
   this.savePoll = function (req, res) {
-    console.log('saving poll')
+    console.log('saving pollxd', req)
   }
 
 }

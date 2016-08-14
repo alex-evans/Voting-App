@@ -1,5 +1,7 @@
 'use strict'
 
+// import fetch from 'whatwg-fetch'
+
 // authorize user
 export function authorizeUser() {
   return {
@@ -37,6 +39,16 @@ function savingPoll() {
 // save new poll
 export function savePoll() {
   return function(dispatch) {
-    ajaxFunctions.ajaxRequest('POST', appUrl + '/api/save/:name', savingPoll)
+    // ajaxFunctions.ajaxRequest('POST', appUrl + '/api/save/:name', savingPoll)
+    let xmlhttp = new XMLHttpRequest()
+
+    xmlhttp.onreadystatechange = function() {
+      if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+        dispatch(savingPoll())
+      }
+    }
+
+    xmlhttp.open('POST', '/api/save/alex', true)
+    xmlhttp.send()
   }
 }
