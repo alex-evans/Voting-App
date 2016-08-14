@@ -16,7 +16,7 @@ export function createPoll(name, question, options) {
     options
   }
 }
-
+/*
 export function savePoll(name, question, options, id) {
   return {
     type: 'SAVE_POLL',
@@ -26,8 +26,8 @@ export function savePoll(name, question, options, id) {
     id
   }
 }
-
-/* Thunk work (come back to when wiring up back end)
+*/
+// Thunk work (come back to when wiring up back end)
 function savingPoll() {
   return {
     type: 'SAVE_POLL'
@@ -37,7 +37,6 @@ function savingPoll() {
 // save new poll
 export function savePoll() {
   return function(dispatch) {
-    dispatch(savingPoll())
+    ajaxFunctions.ajaxRequest('POST', appUrl + '/api/save/:name', savingPoll)
   }
 }
-*/

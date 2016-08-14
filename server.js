@@ -10,6 +10,8 @@ let url = 'mongodb://localhost:27017/'
 let app = express()
 let compiler = webpack(config)
 
+let routes = require('./app/routes/index')
+
 mongoose.connect(url)
 
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -23,8 +25,7 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
-// app.route('/api/save/:name')
-//   .post()
+routes(app)
 
 app.listen(7770, 'localhost', function(err) {
   if(err) {
