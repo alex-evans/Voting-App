@@ -1,6 +1,6 @@
 'use strict'
 
-// import fetch from 'whatwg-fetch'
+import $ from 'jquery'
 
 // authorize user
 export function authorizeUser() {
@@ -18,37 +18,22 @@ export function createPoll(name, question, options) {
     options
   }
 }
-/*
-export function savePoll(name, question, options, id) {
-  return {
-    type: 'SAVE_POLL',
-    name,
-    question,
-    options,
-    id
-  }
-}
-*/
-// Thunk work (come back to when wiring up back end)
+
 function savingPoll() {
   return {
     type: 'SAVE_POLL'
   }
 }
 
-// save new poll
 export function savePoll() {
   return function(dispatch) {
-    // ajaxFunctions.ajaxRequest('POST', appUrl + '/api/save/:name', savingPoll)
-    let xmlhttp = new XMLHttpRequest()
-
-    xmlhttp.onreadystatechange = function() {
-      if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+    $.ajax({
+      type: 'POST',
+      url: '/api/save/alex',
+      data: {name: 'alex', question: 'hi'},
+      success: function() {
         dispatch(savingPoll())
       }
-    }
-
-    xmlhttp.open('POST', '/api/save/alex', true)
-    xmlhttp.send()
+    })
   }
 }

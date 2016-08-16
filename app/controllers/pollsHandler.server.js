@@ -1,11 +1,25 @@
 'use strict'
 
-// import Polls from '../models/polls'
+let qs = require('querystring')
 
-module.exports = function PollsHandler() {
+function PollsHandler() {
 
   this.savePoll = function (req, res) {
-    console.log('saving pollxd', req)
+    let queryData = ""
+    req.on('data', function(data) {
+      queryData += data
+      if(queryData.length > 1e6) {
+        queryData = ""
+        res.writeHead(413, {'Content-Type': 'text/plain'}).end()
+        req.connection.destroy()
+      }
+    })
+
+    req.on('end', function() {
+      console.log(qs.parse(queryData).question)
+    })
   }
 
 }
+
+module.exports = PollsHandler

@@ -9,7 +9,6 @@ function polls(state = [], action) {
         options: action.options
       }]
     case 'SAVE_POLL':
-      console.log("saving pollc", action)
       return [...state, {
         id: action.id,
         name: action.name,
